@@ -35,7 +35,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 15,
               ),
               Text(
-                "Lorem ipsum dolor sit, \namet, consectetur, \nadipiscing elit, sed do, \neiusmod ",
+                "Mari catat pemasukan dan pengeluaranmu tiap hari",
+                style: kataTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                "Lalu lihatlah perkembangan uangmu tiap bulannya",
                 style: kataTextStyle.copyWith(
                   fontSize: 16,
                 ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_application_2/Bookmarkcalendar/main.dart';
+import 'package:flutter_application_2/News/berita.dart';
+import 'package:flutter_application_2/pages/login.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MainPage extends StatefulWidget {
@@ -74,7 +76,22 @@ class _MainPageState extends State<MainPage> {
               formatButtonVisible: false,
               titleCentered: true,
             ),
-          )
+          ),
+          Container(
+              width: double.infinity,
+              height: 50,
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // backgroundColor: Color.fromARGB(255, 21, 0, 155),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => BeritaPage()));
+                  })),
         ],
       ),
     );

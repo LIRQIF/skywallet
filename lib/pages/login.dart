@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Bookmarkcalendar/Bookmarkpage/Index.dart';
+import 'package:flutter_application_2/Bookmarkcalendar/Calendar_page.dart';
 import 'package:flutter_application_2/pages/pages.dart';
 import 'package:flutter_application_2/theme.dart';
 
-void main() {
-  runApp(MyApp());
-}
+// void main() {
+//   runApp(MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   @override
@@ -112,7 +113,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Bookmark()));
+                          MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     child: Text('LOGIN',
                         style: whiteTextStyle.copyWith(
