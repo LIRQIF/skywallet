@@ -5,6 +5,7 @@ import 'package:flutter_application_2/Bookmarkcalendar/main.dart';
 import 'package:flutter_application_2/News/berita.dart';
 import 'package:flutter_application_2/pages/login.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key key}) : super(key: key);
@@ -78,20 +79,86 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           Container(
-              width: double.infinity,
-              height: 50,
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    // backgroundColor: Color.fromARGB(255, 21, 0, 155),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
+            width: double.infinity,
+            height: 50,
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Container(
+                    padding: EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Icon(
+                      Icons.download,
+                      color: Colors.greenAccent[400],
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Income',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 12, color: Colors.white)),
+                    SizedBox(
+                      height: 5,
                     ),
+                    Text('Rp 3.800.000',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 14, color: Colors.white)),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Icon(
+                    Icons.upload,
+                    color: Colors.redAccent[400],
+                  )),
+              SizedBox(
+                width: 10,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Expense',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 12, color: Colors.white)),
+                  SizedBox(
+                    height: 5,
                   ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => BeritaPage()));
-                  })),
+                  Text('Rp 1.600.000',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 14, color: Colors.white)),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.note),
+            label: 'Catatan',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.article),
+            label: 'Artikel',
+          ),
         ],
       ),
     );
