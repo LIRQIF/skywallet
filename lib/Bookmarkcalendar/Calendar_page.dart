@@ -6,6 +6,7 @@ import 'package:flutter_application_2/News/berita.dart';
 import 'package:flutter_application_2/pages/login.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_2/Inputan_fitur/input.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key key}) : super(key: key);
@@ -160,6 +161,29 @@ class _MainPageState extends State<MainPage> {
             label: 'Artikel',
           ),
         ],
+        currentIndex: 0,
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MainPage()),
+              );
+              break;
+            case 1:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyInputPage()),
+              );
+              break;
+            case 2:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BeritaPage()),
+              );
+              break;
+          }
+        },
       ),
     );
   }

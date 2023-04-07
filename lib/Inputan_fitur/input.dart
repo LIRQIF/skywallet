@@ -24,42 +24,10 @@ class _MyInputPageState extends State<MyInputPage> {
       appBar: AppBar(
         title: Text('Catatan Keuangan'),
       ),
-      body: ListView(
+      body: PageView(
         children: [
-          Container(
-            child: TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.category_outlined),
-                labelText: 'Kategori',
-              ),
-            ),
-          ),
-          Container(
-            child: TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.money),
-                labelText: 'Jumlah Pemasukan',
-              ),
-            ),
-          ),
-          Container(
-            child: TextField(
-              controller: dateInput,
-              //editing controller of this TextField
-              decoration: const InputDecoration(
-                  icon: Icon(Icons.calendar_today), //icon of text field
-                  labelText: "Enter Date" //label text of field
-                  ),
-              readOnly: true, // when true user cannot edit text
-              onTap: () async {
-                //when click we have to show the datepicker
-                await _selectDate(context);
-              },
-            ),
-          ),
-          Container(
-            child: ElevatedButton(onPressed: () {}, child: Text('Simpan')),
-          )
+          _buildPemasukanPage(),
+          _buildPengeluaranPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -78,6 +46,110 @@ class _MyInputPageState extends State<MyInputPage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildPemasukanPage() {
+    return ListView(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            'Input Pemasukan',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.category_outlined),
+              labelText: 'Kategori',
+            ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.money),
+              labelText: 'Jumlah Pemasukan',
+            ),
+          ),
+        ),
+        Container(
+          child: TextField(
+            controller: dateInput,
+            //editing controller of this TextField
+            decoration: const InputDecoration(
+                icon: Icon(Icons.calendar_today), //icon of text field
+                labelText: "Enter Date" //label text of field
+                ),
+            readOnly: true, // when true user cannot edit text
+            onTap: () async {
+              //when click we have to show the datepicker
+              await _selectDate(context);
+            },
+          ),
+        ),
+        Container(
+          child: ElevatedButton(onPressed: () {}, child: Text('Simpan')),
+        )
+      ],
+    );
+  }
+
+  Widget _buildPengeluaranPage() {
+    return ListView(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            'Input Pengeluaran',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.category_outlined),
+              labelText: 'Kategori',
+            ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: const InputDecoration(
+              icon: Icon(Icons.money),
+              labelText: 'Jumlah Pengeluaran',
+            ),
+          ),
+        ),
+        Container(
+          child: TextField(
+            controller: dateInput,
+            //editing controller of this TextField
+            decoration: const InputDecoration(
+                icon: Icon(Icons.calendar_today), //icon of text field
+                labelText: "Enter Date" //label text of field
+                ),
+            readOnly: true, // when true user cannot edit text
+            onTap: () async {
+              //when click we have to show the datepicker
+              await _selectDate(context);
+            },
+          ),
+        ),
+        Container(
+          child: ElevatedButton(onPressed: () {}, child: Text('Simpan')),
+        )
+      ],
     );
   }
 
